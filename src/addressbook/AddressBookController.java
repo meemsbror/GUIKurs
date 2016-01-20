@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -19,13 +20,22 @@ public class AddressBookController implements Initializable {
     
     @FXML private MenuBar menuBar;
     @FXML private Button closeAboutButton;
-    
+    @FXML private Button newButton;
+    @FXML private Button deleteButton;
+    @FXML private TextField firstName;
+    @FXML private TextField lastName;
+    @FXML private TextField phone;
+    @FXML private TextField email;
+    @FXML private TextField address;
+    @FXML private TextField postCode;
+    @FXML private TextField city;
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
     }
-    
-    @FXML 
+    @FXML
     protected void openAboutActionPerformed(ActionEvent event) throws IOException{
     
         ResourceBundle bundle = ResourceBundle.getBundle("addressbook/resources/AddressBook");
