@@ -50,8 +50,7 @@ public class AddressBookController implements Initializable {
                 postCode,
                 city
                 );
-
-        pr.init();
+        
         firstName.focusedProperty().addListener(new TextFieldListener(firstName));
         lastName.focusedProperty().addListener(new TextFieldListener(lastName));
         phone.focusedProperty().addListener(new TextFieldListener(phone));
@@ -69,7 +68,7 @@ public class AddressBookController implements Initializable {
             }
 
         });
-        
+        pr.init();
     }
     @FXML
     protected void newButtonActionPerformed (ActionEvent event){
@@ -78,7 +77,6 @@ public class AddressBookController implements Initializable {
 
     @FXML
     protected void textFieldActionPerformed (ActionEvent event){
-        System.out.println("Does it save :O");
         pr.textFieldActionPerformed(event);
     }
 
