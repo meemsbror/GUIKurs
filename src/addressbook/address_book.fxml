@@ -58,6 +58,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip text="Add new contact ;););)" />
+               </tooltip>
             </Button>
             <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonActionPerformed">
                <graphic>
@@ -67,6 +70,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip text="Delete this contact :'(" />
+               </tooltip>
             </Button>
         </items>
       </ToolBar>

@@ -50,7 +50,7 @@ public class AddressBookController implements Initializable {
                 postCode,
                 city
                 );
-        
+
         firstName.focusedProperty().addListener(new TextFieldListener(firstName));
         lastName.focusedProperty().addListener(new TextFieldListener(lastName));
         phone.focusedProperty().addListener(new TextFieldListener(phone));
