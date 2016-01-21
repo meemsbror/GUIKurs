@@ -52,6 +52,13 @@ public class AddressBookController implements Initializable {
                 );
 
         pr.init();
+        firstName.focusedProperty().addListener(new TextFieldListener(firstName));
+        lastName.focusedProperty().addListener(new TextFieldListener(lastName));
+        phone.focusedProperty().addListener(new TextFieldListener(phone));
+        email.focusedProperty().addListener(new TextFieldListener(email));
+        address.focusedProperty().addListener(new TextFieldListener(address));
+        postCode.focusedProperty().addListener(new TextFieldListener(postCode));
+        city.focusedProperty().addListener(new TextFieldListener(city));
 
 
         listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
@@ -70,8 +77,33 @@ public class AddressBookController implements Initializable {
     }
 
     @FXML
+    protected void textFieldActionPerformed (ActionEvent event){
+        System.out.println("Does it save :O");
+        pr.textFieldActionPerformed(event);
+    }
+
+    @FXML
     protected void deleteButtonActionPerformed (ActionEvent event){
         pr.removeCurrentContact();
+    }
+    private class TextFieldListener implements ChangeListener<Boolean>{
+
+        private TextField textField;
+
+        public TextFieldListener(TextField textField){
+            this.textField = textField;
+        }
+
+        @Override
+        public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+            if(newValue){
+                pr.textFieldFocusGained(textField);
+
+            }
+            else{
+                pr.textFieldFocusLost(textField);
+            }
+        }
     }
 
     @FXML
