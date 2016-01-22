@@ -84,6 +84,8 @@ public class AddressBookController implements Initializable {
     protected void deleteButtonActionPerformed (ActionEvent event){
         pr.removeCurrentContact();
     }
+
+    //Inner class that is a Textfieldlistener for the different textfields.
     private class TextFieldListener implements ChangeListener<Boolean>{
 
         private TextField textField;
@@ -101,8 +103,8 @@ public class AddressBookController implements Initializable {
             else{
                 pr.textFieldFocusLost(textField);
             }
-        }
-    }
+        }//Changed
+    }//TextFieldListener
 
     @FXML
     protected void openAboutActionPerformed(ActionEvent event) throws IOException{
