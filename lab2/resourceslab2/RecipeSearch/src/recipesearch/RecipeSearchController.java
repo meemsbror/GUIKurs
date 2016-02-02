@@ -8,8 +8,10 @@ import javafx.fxml.*;
 import javafx.scene.*;
 
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.*;
+
 
 public class RecipeSearchController implements Initializable {
     
@@ -30,6 +32,9 @@ public class RecipeSearchController implements Initializable {
     @FXML private TextField priceTextField;
     @FXML private Slider timeSlider;
     @FXML private Button searchButton;
+
+    //Pane numero dos
+    @FXML private AnchorPane recipe1;
 
 
 
@@ -63,5 +68,16 @@ public class RecipeSearchController implements Initializable {
     @FXML
     protected void homeButtonActionPreformed(ActionEvent event){
         pane1.toFront();
+    }
+    protected void backButtonActionPreformed(ActionEvent event){
+        System.out.println(event.getSource().toString());
+    }
+    @FXML
+    protected void recipeChoosen(MouseEvent event){
+
+    }
+    @FXML
+    protected void recipeHoover(MouseEvent event){
+        System.out.println("HEEEEJ");
     }
 }
