@@ -1,20 +1,15 @@
 
 package recipesearch;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuBar;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
+import javafx.event.*;
+import javafx.fxml.*;
+import javafx.scene.*;
+
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.*;
 
 public class RecipeSearchController implements Initializable {
     
@@ -27,6 +22,19 @@ public class RecipeSearchController implements Initializable {
     @FXML private AnchorPane pane2;
     @FXML private AnchorPane pane3;
     
+    @FXML private ChoiceBox cuisineChoiceBox;
+    @FXML private ChoiceBox ingredientChoiceBox;
+    @FXML private RadioButton ezRadio;
+    @FXML private RadioButton lessEzRadio;
+    @FXML private RadioButton notEzRadio;
+    @FXML private TextField priceTextField;
+    @FXML private Slider timeSlider;
+    @FXML private Button searchButton;
+
+
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
