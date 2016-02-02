@@ -10,6 +10,10 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.*;
+import javafx.collections.*;
+
+import se.chalmers.ait.dat215.lab2.RecipeDatabase;
+
 
 public class RecipeSearchController implements Initializable {
     
@@ -22,7 +26,7 @@ public class RecipeSearchController implements Initializable {
     @FXML private AnchorPane pane2;
     @FXML private AnchorPane pane3;
     
-    @FXML private ChoiceBox cuisineChoiceBox;
+    @FXML private ChoiceBox<String> cuisineChoiceBox;
     @FXML private ChoiceBox ingredientChoiceBox;
     @FXML private RadioButton ezRadio;
     @FXML private RadioButton lessEzRadio;
@@ -30,6 +34,11 @@ public class RecipeSearchController implements Initializable {
     @FXML private TextField priceTextField;
     @FXML private Slider timeSlider;
     @FXML private Button searchButton;
+    @FXML private ToggleGroup difficulty;
+
+
+
+    RecipeDatabase db = RecipeDatabase.getSharedInstance();
 
 
 
@@ -37,7 +46,12 @@ public class RecipeSearchController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
+        ezRadio.setToggleGroup(difficulty);
+        lessEzRadio.setToggleGroup(difficulty);
+        notEzRadio.setToggleGroup(difficulty);
+
+
     }
     
     @FXML 
@@ -63,5 +77,12 @@ public class RecipeSearchController implements Initializable {
     @FXML
     protected void homeButtonActionPreformed(ActionEvent event){
         pane1.toFront();
+    }
+
+    @FXML
+    protected void search(ActionEvent event){
+
+        String country = cuisineChoiceBox.getSelectionModel().getSelectedItem().toString();
+        String mainIngredient = ingredientChoiceBox.getSelectionModel().getSelectedItem().toString();
     }
 }
