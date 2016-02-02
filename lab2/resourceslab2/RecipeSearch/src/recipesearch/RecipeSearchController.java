@@ -10,13 +10,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuBar;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class RecipeSearchController implements Initializable {
     
     @FXML private MenuBar menuBar;
+
+    @FXML private Button homeButton;
+
+    //The different "Tabs" that contain information.
+    @FXML private AnchorPane pane1;
+    @FXML private AnchorPane pane2;
+    @FXML private AnchorPane pane3;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -41,5 +50,10 @@ public class RecipeSearchController implements Initializable {
         
         Stage addressBookStage = (Stage) menuBar.getScene().getWindow();
         addressBookStage.hide();
-    }    
+    }
+
+    @FXML
+    protected void homeButtonActionPreformed(ActionEvent event){
+        pane1.toFront();
+    }
 }
