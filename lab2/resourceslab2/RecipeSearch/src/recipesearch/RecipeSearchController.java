@@ -53,11 +53,9 @@ public class RecipeSearchController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
         setToggleGroupRadioButtons();
         setCuisineChoiceBox();
         setIngredientChoiceBox();
-
     }
 
     private void setCuisineChoiceBox(){
@@ -118,10 +116,25 @@ public class RecipeSearchController implements Initializable {
         String diff = getDifficulty();
 
         recipes = db.search(new SearchFilter(diff,cookingTime,country,price,mainIngredient));
-
+        setResults();
         pane2.toFront();
+
     }
 
+    private void setResults(){
+        int i = 0;
+        for(Recipe r:recipes){
+            if(i<7) {
+                if (r != null) {
+                    //add recipe to box
+                    i++;
+                } else {
+                    hideRest(i);
+                    break;
+                }
+            }
+        }
+    }
 
     private int getPrice(){
         if(priceTextField.getText()!=null) {
@@ -134,6 +147,10 @@ public class RecipeSearchController implements Initializable {
             }
         }
         return 0;
+    }
+
+    private void hideRest (int i){
+
     }
 
 
