@@ -8,6 +8,8 @@ import javafx.fxml.*;
 import javafx.scene.*;
 
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.*;
@@ -36,7 +38,10 @@ public class RecipeSearchController implements Initializable {
     @FXML private AnchorPane recipe1;
 
     //Pane numero dres
-    @FXML private Label recipeText;
+    @FXML private Label nameText;
+    @FXML private Label ingredientText;
+    @FXML private Label descriptionText;
+    @FXML private ImageView recipePic;
 
 
 
@@ -44,10 +49,7 @@ public class RecipeSearchController implements Initializable {
 
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        pane2.setVisible(false);
-        pane3.setVisible(false);
-    }
+    public void initialize(URL url, ResourceBundle rb) {}
     
     @FXML 
     protected void openAboutActionPerformed(ActionEvent event) throws IOException{
@@ -70,21 +72,16 @@ public class RecipeSearchController implements Initializable {
     }
 
     @FXML
-    protected void backButtonActionPreformed(ActionEvent event){
-        if(pane2.isVisible()){
-            pane2.setVisible(false);
-            pane1.toFront();
-        }else{
-            pane3.setVisible(false);
-            pane2.setVisible(true);
-            pane2.toFront();
-        }
+    protected void backButton1ActionPreformed(ActionEvent event){
+        pane1.toFront();
+    }
+    @FXML
+    protected void backButton2ActionPreformed(ActionEvent event){
+        pane2.toFront();
     }
     @FXML
     protected void recipeChoosen(MouseEvent event){
         recipeText.setText("");
-        pane2.setVisible(false);
-        pane3.setVisible(true);
         pane3.toFront();
     }
     @FXML
@@ -93,7 +90,6 @@ public class RecipeSearchController implements Initializable {
     }
     @FXML
     protected void searchButtonActionPreformed(ActionEvent event){
-        pane2.setVisible(true);
         pane2.toFront();
     }
 }

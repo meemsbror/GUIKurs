@@ -133,7 +133,7 @@
                         </AnchorPane>
                      </content>
                   </ScrollPane>
-                  <Button fx:id="backButton" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButtonActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
+                  <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButton1ActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
                      <tooltip>
                         <Tooltip text="Back to the start" />
                      </tooltip></Button>
@@ -141,24 +141,29 @@
             </AnchorPane>
             <AnchorPane id="white" fx:id="pane3" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
                <children>
-                  <Label fx:id="recipeText" layoutX="36.0" layoutY="243.0" prefHeight="204.0" prefWidth="555.0" text="Hej" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="243.0">
+                  <Label fx:id="recipeText" alignment="TOP_LEFT" layoutX="36.0" layoutY="243.0" prefHeight="204.0" prefWidth="555.0" text="Description" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="243.0">
                      <font>
-                        <Font size="77.0" />
+                        <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="backButton1" layoutX="66.0" layoutY="21.0" mnemonicParsing="false" onAction="#backButtonActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
+                  <Button layoutX="66.0" layoutY="21.0" mnemonicParsing="false" onAction="#backButton2ActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
                      <tooltip>
                         <Tooltip text="Back to the start" />
                      </tooltip>
                   </Button>
-                  <ImageView fitHeight="153.0" fitWidth="212.0" layoutX="16.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0">
+                  <ImageView fx:id="recipePic" fitHeight="153.0" fitWidth="212.0" layoutX="16.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0">
                      <image>
                         <Image url="@../../../recipes/chicken-tikka-masala.jpg" />
                      </image>
                   </ImageView>
-                  <Label fx:id="recipeText1" layoutX="261.0" layoutY="64.0" prefHeight="156.0" prefWidth="294.0" text="Hej" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="36.0">
+                  <Label fx:id="nameText" alignment="CENTER" layoutX="276.0" layoutY="52.0" prefHeight="39.0" prefWidth="294.0" text="Name" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="30.0">
                      <font>
-                        <Font size="77.0" />
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ingredientText" alignment="TOP_LEFT" layoutX="281.0" layoutY="119.0" prefHeight="129.0" prefWidth="294.0" text="Ingredience">
+                     <font>
+                        <Font size="14.0" />
                      </font>
                   </Label>
                </children>
