@@ -17,7 +17,8 @@ public class RecipeSearchController implements Initializable {
     
     @FXML private MenuBar menuBar;
 
-    @FXML private Button homeButton;
+    @FXML private Button backButton;
+    @FXML private Button backButton1;
 
     //The different "Tabs" that contain information.
     @FXML private AnchorPane pane1;
@@ -46,7 +47,8 @@ public class RecipeSearchController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        pane2.setVisible(false);
+        pane3.setVisible(false);
     }
     
     @FXML 
@@ -70,21 +72,30 @@ public class RecipeSearchController implements Initializable {
     }
 
     @FXML
-    protected void homeButtonActionPreformed(ActionEvent event){
-        pane1.toFront();
-    }
     protected void backButtonActionPreformed(ActionEvent event){
-        System.out.println(event.getSource().toString());
+        if(pane2.isVisible()){
+            pane2.setVisible(false);
+            pane1.toFront();
+        }else{
+            pane3.setVisible(false);
+            pane2.setVisible(true);
+            pane2.toFront();
+        }
     }
     @FXML
     protected void recipeChoosen(MouseEvent event){
         recipeText.setText("");
+        pane2.setVisible(false);
+        pane3.setVisible(true);
         pane3.toFront();
-        System.out.println("HEEEEJ");
     }
     @FXML
     protected void recipeHoover(MouseEvent event){
         //TODO
-        System.out.println("HEEEEJ");
+    }
+    @FXML
+    protected void searchButtonActionPreformed(ActionEvent event){
+        pane2.setVisible(true);
+        pane2.toFront();
     }
 }
