@@ -36,6 +36,10 @@ public class RecipeSearchController implements Initializable {
     //Pane numero dos
     @FXML private AnchorPane recipe1;
 
+    //Pane numero dres
+    @FXML private Label recipeText;
+
+
 
 
 
@@ -74,10 +78,13 @@ public class RecipeSearchController implements Initializable {
     }
     @FXML
     protected void recipeChoosen(MouseEvent event){
-
+        recipeText.setText("");
+        pane3.toFront();
+        System.out.println("HEEEEJ");
     }
     @FXML
     protected void recipeHoover(MouseEvent event){
+        //TODO
         System.out.println("HEEEEJ");
     }
 }
