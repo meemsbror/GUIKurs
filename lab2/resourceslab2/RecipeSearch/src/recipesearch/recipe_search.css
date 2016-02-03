@@ -28,6 +28,19 @@
     -fx-background-color: orange;
     -fx-font: 20px serif;
 }
+
+/*
+------------------------------------------------------
+Text properties
+------------------------------------------------------
+*/
+.headline{
+    -fx-font: 40px "Comic Sans MS", cursive, sans-serif;
+}
+.label{
+    -fx-font: 17px "Comic Sans MS", cursive, sans-serif;
+}
+
 #menubar{
     -fx-background-color: white;
 }
