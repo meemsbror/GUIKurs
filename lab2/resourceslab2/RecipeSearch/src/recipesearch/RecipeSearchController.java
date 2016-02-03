@@ -12,7 +12,11 @@ import javafx.scene.layout.*;
 import javafx.stage.*;
 import javafx.collections.*;
 
+import java.util.*;
+
+import se.chalmers.ait.dat215.lab2.Recipe;
 import se.chalmers.ait.dat215.lab2.RecipeDatabase;
+import se.chalmers.ait.dat215.lab2.SearchFilter;
 
 
 public class RecipeSearchController implements Initializable {
@@ -37,6 +41,7 @@ public class RecipeSearchController implements Initializable {
     @FXML private ToggleGroup difficulty;
 
     RecipeDatabase db = RecipeDatabase.getSharedInstance();
+    List <Recipe> recipes;
 
 
 
@@ -48,8 +53,6 @@ public class RecipeSearchController implements Initializable {
         setToggleGroupRadioButtons();
         setCuisineChoiceBox();
         setIngredientChoiceBox();
-
-
 
     }
 
@@ -105,5 +108,22 @@ public class RecipeSearchController implements Initializable {
 
         String country = (String) cuisineChoiceBox.getValue();
         String mainIngredient = (String) ingredientChoiceBox.getValue();
+        int cookingTime = (int)timeSlider.getValue();
+        int price = Integer.parseInt(priceTextField.getText());
+        String diff = getDifficulty();
+
+        recipes = db.search(new SearchFilter(diff,cookingTime,country,price,mainIngredient));
+    }
+    private String getDifficulty(){
+        if(notEzRadio.isSelected()){
+            return "Svår";
+        }
+        if(lessEzRadio.isSelected()) {
+            return "Mellan";
+        }
+        if(ezRadio.isSelected()) {
+            return "Lätt";
+        }
+        return null;
     }
 }
