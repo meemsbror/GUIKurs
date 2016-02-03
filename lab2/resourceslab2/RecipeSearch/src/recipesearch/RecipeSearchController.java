@@ -8,6 +8,8 @@ import javafx.fxml.*;
 import javafx.scene.*;
 
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.*;
@@ -25,7 +27,6 @@ public class RecipeSearchController implements Initializable {
     
     @FXML private MenuBar menuBar;
 
-    @FXML private Button homeButton;
 
     //The different "Tabs" that contain information.
     @FXML private AnchorPane pane1;
@@ -47,6 +48,13 @@ public class RecipeSearchController implements Initializable {
 
     //Pane numero dos
     @FXML private AnchorPane recipe1;
+
+    //Pane numero dres
+    @FXML private Label nameText;
+    @FXML private Label ingredientText;
+    @FXML private Label descriptionText;
+    @FXML private ImageView recipePic;
+
 
 
 
@@ -81,7 +89,7 @@ public class RecipeSearchController implements Initializable {
         notEzRadio.setToggleGroup(difficulty);
     }
 
-    @FXML 
+    @FXML
     protected void openAboutActionPerformed(ActionEvent event) throws IOException{
     
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("recipesearch/resources/RecipeSearch");
@@ -102,8 +110,13 @@ public class RecipeSearchController implements Initializable {
     }
 
     @FXML
-    protected void homeButtonActionPreformed(ActionEvent event){
+    protected void backButton1ActionPreformed(ActionEvent event){
         pane1.toFront();
+    }
+
+    @FXML
+    protected void backButton2ActionPreformed(ActionEvent event) {
+        pane2.toFront();
     }
 
     @FXML
@@ -172,10 +185,15 @@ public class RecipeSearchController implements Initializable {
     }
     @FXML
     protected void recipeChoosen(MouseEvent event){
-
+        nameText.setText("");
+        pane3.toFront();
     }
     @FXML
     protected void recipeHoover(MouseEvent event){
-        System.out.println("HEEEEJ");
+        //TODO
+    }
+    @FXML
+    protected void searchButtonActionPreformed(ActionEvent event){
+        pane2.toFront();
     }
 }
