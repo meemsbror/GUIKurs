@@ -2,16 +2,16 @@
     -fx-background-color: black;
 }
 
-#pane1{
+#orange{
     -fx-background-color: #ff9900;
 }
 
-#pane2{
-    -fx-background-color: #0F0;
+#black{
+    -fx-background-color: black;
 }
 
-#pane3{
-    -fx-background-color: #00F;
+#white{
+    -fx-background-color: white;
 }
 
 #gridPane{

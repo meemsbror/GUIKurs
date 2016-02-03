@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -25,8 +26,7 @@
    <children>
       <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
          <children>
-            <AnchorPane fx:id="pane3" prefHeight="200.0" prefWidth="200.0" />
-            <AnchorPane fx:id="pane1" prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane id="white" fx:id="pane1" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
                <children>
                   <GridPane layoutY="68.0" prefHeight="242.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <columnConstraints>
@@ -99,10 +99,10 @@
                         <Font size="35.0" />
                      </font>
                   </Label>
-                  <Button layoutX="86.0" layoutY="371.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="150.0" text="Search" />
+                  <Button fx:id="searchButton" layoutX="86.0" layoutY="371.0" mnemonicParsing="false" onAction="#searchButtonActionPreformed" prefHeight="61.0" prefWidth="150.0" text="Search" />
                </children>
             </AnchorPane>
-            <AnchorPane id="pane3" fx:id="pane2" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
+            <AnchorPane id="white" fx:id="pane2" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
                <children>
                   <ScrollPane layoutX="16.0" layoutY="42.0" prefHeight="314.0" prefWidth="569.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
                      <content>
@@ -133,10 +133,34 @@
                         </AnchorPane>
                      </content>
                   </ScrollPane>
-                  <Button fx:id="homeButton" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#homeButtonActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Home" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="8.0">
+                  <Button fx:id="backButton" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButtonActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
                      <tooltip>
                         <Tooltip text="Back to the start" />
                      </tooltip></Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="white" fx:id="pane3" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
+               <children>
+                  <Label fx:id="recipeText" layoutX="36.0" layoutY="243.0" prefHeight="204.0" prefWidth="555.0" text="Hej" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="243.0">
+                     <font>
+                        <Font size="77.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="backButton1" layoutX="66.0" layoutY="21.0" mnemonicParsing="false" onAction="#backButtonActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
+                     <tooltip>
+                        <Tooltip text="Back to the start" />
+                     </tooltip>
+                  </Button>
+                  <ImageView fitHeight="153.0" fitWidth="212.0" layoutX="16.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0">
+                     <image>
+                        <Image url="@../../../recipes/chicken-tikka-masala.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="recipeText1" layoutX="261.0" layoutY="64.0" prefHeight="156.0" prefWidth="294.0" text="Hej" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="36.0">
+                     <font>
+                        <Font size="77.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>

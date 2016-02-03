@@ -17,8 +17,6 @@ public class RecipeSearchController implements Initializable {
     
     @FXML private MenuBar menuBar;
 
-    @FXML private Button backButton;
-    @FXML private Button backButton1;
 
     //The different "Tabs" that contain information.
     @FXML private AnchorPane pane1;
