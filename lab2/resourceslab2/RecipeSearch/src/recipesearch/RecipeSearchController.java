@@ -36,8 +36,6 @@ public class RecipeSearchController implements Initializable {
     @FXML private Button searchButton;
     @FXML private ToggleGroup difficulty;
 
-
-
     RecipeDatabase db = RecipeDatabase.getSharedInstance();
 
 
@@ -47,13 +45,36 @@ public class RecipeSearchController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        ezRadio.setToggleGroup(difficulty);
-        lessEzRadio.setToggleGroup(difficulty);
-        notEzRadio.setToggleGroup(difficulty);
+        setToggleGroupRadioButtons();
+        setCuisineChoiceBox();
+        setIngredientChoiceBox();
+
 
 
     }
-    
+
+    private void setCuisineChoiceBox(){
+
+        cuisineChoiceBox.setItems(FXCollections.observableArrayList("Sverige",
+                "Grekland",
+                "Indien",
+                "Asien",
+                "Afrika",
+                "Frankrike"));
+
+    }
+    private void setIngredientChoiceBox(){
+        ingredientChoiceBox.setItems(FXCollections.observableArrayList("Kött",
+                "Fisk",
+                "Kyckling",
+                "Vegetarisk"));
+
+    }
+    private void setToggleGroupRadioButtons(){
+        ezRadio.setToggleGroup(difficulty);
+        lessEzRadio.setToggleGroup(difficulty);
+        notEzRadio.setToggleGroup(difficulty);
+    }
     @FXML 
     protected void openAboutActionPerformed(ActionEvent event) throws IOException{
     
@@ -82,7 +103,7 @@ public class RecipeSearchController implements Initializable {
     @FXML
     protected void search(ActionEvent event){
 
-        String country = cuisineChoiceBox.getSelectionModel().getSelectedItem().toString();
-        String mainIngredient = ingredientChoiceBox.getSelectionModel().getSelectedItem().toString();
+        String country = (String) cuisineChoiceBox.getValue();
+        String mainIngredient = (String) ingredientChoiceBox.getValue();
     }
 }
