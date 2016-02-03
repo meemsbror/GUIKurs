@@ -8,6 +8,7 @@ import javafx.fxml.*;
 import javafx.scene.*;
 
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.*;
 import javafx.collections.*;
@@ -17,6 +18,7 @@ import java.util.*;
 import se.chalmers.ait.dat215.lab2.Recipe;
 import se.chalmers.ait.dat215.lab2.RecipeDatabase;
 import se.chalmers.ait.dat215.lab2.SearchFilter;
+
 
 
 public class RecipeSearchController implements Initializable {
@@ -42,6 +44,9 @@ public class RecipeSearchController implements Initializable {
 
     RecipeDatabase db = RecipeDatabase.getSharedInstance();
     List <Recipe> recipes;
+
+    //Pane numero dos
+    @FXML private AnchorPane recipe1;
 
 
 
@@ -114,16 +119,27 @@ public class RecipeSearchController implements Initializable {
 
         recipes = db.search(new SearchFilter(diff,cookingTime,country,price,mainIngredient));
     }
-    private String getDifficulty(){
-        if(notEzRadio.isSelected()){
+    private String getDifficulty() {
+        if (notEzRadio.isSelected()) {
             return "Svår";
         }
-        if(lessEzRadio.isSelected()) {
+        if (lessEzRadio.isSelected()) {
             return "Mellan";
         }
-        if(ezRadio.isSelected()) {
+        if (ezRadio.isSelected()) {
             return "Lätt";
         }
         return null;
+    }
+    protected void backButtonActionPreformed(ActionEvent event){
+        System.out.println(event.getSource().toString());
+    }
+    @FXML
+    protected void recipeChoosen(MouseEvent event){
+
+    }
+    @FXML
+    protected void recipeHoover(MouseEvent event){
+        System.out.println("HEEEEJ");
     }
 }
