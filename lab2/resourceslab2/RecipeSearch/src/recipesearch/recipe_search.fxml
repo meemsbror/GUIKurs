@@ -121,7 +121,7 @@
                                 </AnchorPane>
                                 <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <children>
-                                        <TextField layoutX="25.0" layoutY="48.0" prefHeight="28.0" prefWidth="38.0" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="44.0" />
+                                        <TextField fx:id="priceTextField" layoutX="25.0" layoutY="48.0" prefHeight="28.0" prefWidth="38.0" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="44.0" />
                                         <Label layoutX="25.0" layoutY="22.0" text="Max Price" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="14.0">
                                             <font>
                                                 <Font name="System Bold" size="17.0" />
@@ -136,7 +136,7 @@
                                 <Font size="35.0" />
                             </font>
                         </Label>
-                        <Button layoutX="86.0" layoutY="371.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="150.0" text="Search" AnchorPane.rightAnchor="38.0" />
+                        <Button layoutX="86.0" layoutY="371.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="61.0" prefWidth="150.0" text="Search" AnchorPane.rightAnchor="38.0" />
                         <AnchorPane layoutX="36.0" layoutY="257.0" prefHeight="78.0" prefWidth="251.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                             <children>
                                 <Label layoutY="2.0" text="Estimated time" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="14.0">
@@ -144,7 +144,7 @@
                                         <Font name="System Bold" size="17.0" />
                                     </font>
                                 </Label>
-                                <Slider layoutY="29.0" majorTickUnit="20.0" max="150.0" min="10.0" minorTickCount="1" prefHeight="42.0" prefWidth="327.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="60.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="44.0" />
+                                <Slider fx:id="timeSlider" layoutY="29.0" majorTickUnit="20.0" max="150.0" min="10.0" minorTickCount="1" prefHeight="42.0" prefWidth="327.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="60.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="44.0" />
                             </children>
                         </AnchorPane>
                     </children>

@@ -51,7 +51,6 @@ public class RecipeSearchController implements Initializable {
 
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -83,6 +82,7 @@ public class RecipeSearchController implements Initializable {
         lessEzRadio.setToggleGroup(difficulty);
         notEzRadio.setToggleGroup(difficulty);
     }
+
     @FXML 
     protected void openAboutActionPerformed(ActionEvent event) throws IOException{
     
@@ -109,16 +109,34 @@ public class RecipeSearchController implements Initializable {
     }
 
     @FXML
-    protected void search(ActionEvent event){
+    protected void searchButtonActionPerformed(ActionEvent event){
 
         String country = (String) cuisineChoiceBox.getValue();
         String mainIngredient = (String) ingredientChoiceBox.getValue();
         int cookingTime = (int)timeSlider.getValue();
-        int price = Integer.parseInt(priceTextField.getText());
+        int price = getPrice();
         String diff = getDifficulty();
 
         recipes = db.search(new SearchFilter(diff,cookingTime,country,price,mainIngredient));
+
+        pane2.toFront();
     }
+
+
+    private int getPrice(){
+        if(priceTextField.getText()!=null) {
+            String price = priceTextField.getText();
+
+            try {
+                return Integer.parseInt(price);
+            } catch (NumberFormatException e1) {
+
+            }
+        }
+        return 0;
+    }
+
+
     private String getDifficulty() {
         if (notEzRadio.isSelected()) {
             return "Svår";
@@ -131,6 +149,7 @@ public class RecipeSearchController implements Initializable {
         }
         return null;
     }
+
     protected void backButtonActionPreformed(ActionEvent event){
         System.out.println(event.getSource().toString());
     }
