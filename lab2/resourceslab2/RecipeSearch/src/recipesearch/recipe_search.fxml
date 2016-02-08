@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
@@ -18,6 +11,9 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -25,7 +21,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="489.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
+<AnchorPane id="AnchorPane" maxHeight="489.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recipesearch.RecipeSearchController">
     <children>
         <MenuBar fx:id="menuBar" maxHeight="30.0" maxWidth="600.0" minHeight="30.0" minWidth="600.0" prefHeight="30.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <menus>
@@ -43,73 +39,6 @@
         </MenuBar>
         <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
             <children>
-            <AnchorPane id="white" fx:id="pane2" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
-               <children>
-                  <ScrollPane layoutX="16.0" layoutY="42.0" prefHeight="314.0" prefWidth="569.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
-                     <content>
-                        <AnchorPane prefWidth="552.0">
-                           <children>
-                              <GridPane hgap="20.0" opacity="0.65" prefHeight="500.0" prefWidth="558.0" stylesheets="@recipe_search.css" vgap="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <AnchorPane id="gridPane" fx:id="recipe1" onMouseClicked="#recipeChoosen" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css" />
-                                 </children>
-                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                 </columnConstraints>
-                                 <padding>
-                                    <Insets top="20.0" />
-                                 </padding>
-                                 <rowConstraints>
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                              </GridPane>
-                           </children>
-                           <padding>
-                              <Insets left="20.0" right="20.0" />
-                           </padding>
-                        </AnchorPane>
-                     </content>
-                  </ScrollPane>
-                  <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButton1ActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
-                     <tooltip>
-                        <Tooltip text="Back to the start" />
-                     </tooltip>
-                  </Button>
-               </children>
-            </AnchorPane>
-            <AnchorPane id="white" fx:id="pane3" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
-               <children>
-                  <Label fx:id="recipeText" alignment="TOP_LEFT" layoutX="36.0" layoutY="243.0" prefHeight="204.0" prefWidth="555.0" text="Description" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="243.0">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="66.0" layoutY="21.0" mnemonicParsing="false" onAction="#backButton2ActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
-                     <tooltip>
-                        <Tooltip text="Back to the start" />
-                     </tooltip>
-                  </Button>
-                  <ImageView fx:id="recipePic" fitHeight="153.0" fitWidth="212.0" layoutX="16.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0">
-                     <image>
-                        <Image url="@../../../recipes/chicken-tikka-masala.jpg" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="nameText" alignment="CENTER" layoutX="276.0" layoutY="52.0" prefHeight="39.0" prefWidth="294.0" text="Name" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="30.0">
-                     <font>
-                        <Font size="40.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="ingredientText" alignment="TOP_LEFT" layoutX="281.0" layoutY="119.0" prefHeight="129.0" prefWidth="294.0" text="Ingredience">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
                 <AnchorPane id="white" fx:id="pane1" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
                     <children>
                         <GridPane layoutY="68.0" prefHeight="164.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -187,6 +116,45 @@
                         </AnchorPane>
                     </children>
                 </AnchorPane>
+            <AnchorPane id="white" fx:id="pane3" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
+               <children>
+                  <Label fx:id="recipeText" alignment="TOP_LEFT" layoutX="36.0" layoutY="243.0" prefHeight="204.0" prefWidth="555.0" text="Description" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="243.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="66.0" layoutY="21.0" mnemonicParsing="false" onAction="#backButton2ActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
+                     <tooltip>
+                        <Tooltip text="Back to the start" />
+                     </tooltip>
+                  </Button>
+                  <ImageView fx:id="recipePic" fitHeight="153.0" fitWidth="212.0" layoutX="16.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="36.0">
+                     <image>
+                        <Image url="@../../../recipes/chicken-tikka-masala.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="nameText" alignment="CENTER" layoutX="276.0" layoutY="52.0" prefHeight="39.0" prefWidth="294.0" text="Name" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="30.0">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ingredientText" alignment="TOP_LEFT" layoutX="281.0" layoutY="119.0" prefHeight="129.0" prefWidth="294.0" text="Ingredience">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="white" fx:id="pane2" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
+               <children>
+                  <ScrollPane layoutX="16.0" layoutY="42.0" prefHeight="314.0" prefWidth="569.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0" />
+                  <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButton1ActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
+                     <tooltip>
+                        <Tooltip text="Back to the start" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </AnchorPane>
             </children>
         </StackPane>
     </children>

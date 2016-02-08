@@ -34,7 +34,7 @@
 Text properties
 ------------------------------------------------------
 */
-#headline{
+.headline{
     -fx-font: 40px "Comic Sans MS", cursive, sans-serif;
 }
 .label{
