@@ -39,83 +39,6 @@
         </MenuBar>
         <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
             <children>
-                <AnchorPane id="white" fx:id="pane1" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
-                    <children>
-                        <GridPane layoutY="68.0" prefHeight="164.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            </columnConstraints>
-                            <rowConstraints>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            </rowConstraints>
-                            <children>
-                                <AnchorPane prefHeight="130.0" prefWidth="300.0">
-                                    <children>
-                                        <ChoiceBox fx:id="cuisineChoiceBox" layoutX="38.0" layoutY="43.0" prefHeight="28.0" prefWidth="150.0" AnchorPane.leftAnchor="44.0" />
-                                        <Label layoutX="38.0" layoutY="19.0" text="Cuisine" AnchorPane.topAnchor="14.0">
-                                            <font>
-                                                <Font name="System Bold" size="17.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </AnchorPane>
-                                <AnchorPane GridPane.columnIndex="1">
-                                    <children>
-                                        <ChoiceBox fx:id="ingredientChoiceBox" layoutX="23.0" layoutY="43.0" prefWidth="150.0" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="43.0" />
-                                        <Label layoutX="38.0" layoutY="14.0" text="Main Igredient" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="14.0">
-                                            <font>
-                                                <Font name="System Bold" size="17.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </AnchorPane>
-                                <AnchorPane GridPane.rowIndex="1">
-                                    <children>
-                                        <RadioButton fx:id="ezRadio" layoutX="44.0" layoutY="44.0" mnemonicParsing="false" text="Ez" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="44.0">
-                                            <toggleGroup>
-                                                <ToggleGroup fx:id="difficulty" />
-                                            </toggleGroup></RadioButton>
-                                        <RadioButton fx:id="lessEzRadio" layoutX="116.0" layoutY="44.0" mnemonicParsing="false" text="Less Ez" toggleGroup="$difficulty" AnchorPane.topAnchor="44.0" />
-                                        <RadioButton fx:id="notEzRadio" layoutX="222.0" layoutY="44.0" mnemonicParsing="false" text="Not ez" toggleGroup="$difficulty" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="44.0" />
-                                        <Label layoutX="40.0" layoutY="14.0" prefHeight="24.0" prefWidth="150.0" text="Difficulty" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="14.0">
-                                            <font>
-                                                <Font name="System Bold" size="17.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </AnchorPane>
-                                <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                    <children>
-                                        <TextField fx:id="priceTextField" layoutX="25.0" layoutY="48.0" prefHeight="28.0" prefWidth="38.0" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="44.0" />
-                                        <Label layoutX="25.0" layoutY="22.0" text="Max Price" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="14.0">
-                                            <font>
-                                                <Font name="System Bold" size="17.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </AnchorPane>
-                            </children>
-                        </GridPane>
-                        <Label id="headling" layoutX="42.0" layoutY="14.0" prefHeight="54.0" prefWidth="251.0" stylesheets="@recipe_search.css" text="Recipe book" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="14.0">
-                            <font>
-                                <Font size="40.0" />
-                            </font>
-                        </Label>
-                        <Button layoutX="86.0" layoutY="371.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="61.0" prefWidth="150.0" stylesheets="@recipe_search.css" text="Search" AnchorPane.rightAnchor="38.0" />
-                        <AnchorPane layoutX="36.0" layoutY="257.0" prefHeight="78.0" prefWidth="251.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                            <children>
-                                <Label layoutY="2.0" text="Estimated time" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="14.0">
-                                    <font>
-                                        <Font name="System Bold" size="17.0" />
-                                    </font>
-                                </Label>
-                                <Slider fx:id="timeSlider" layoutY="29.0" majorTickUnit="20.0" max="150.0" min="10.0" minorTickCount="1" prefHeight="42.0" prefWidth="327.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="60.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="44.0" />
-                            </children>
-                        </AnchorPane>
-                    </children>
-                </AnchorPane>
             <AnchorPane id="white" fx:id="pane3" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
                <children>
                   <Label fx:id="recipeText" alignment="TOP_LEFT" layoutX="36.0" layoutY="243.0" prefHeight="204.0" prefWidth="555.0" text="Description" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="243.0">
@@ -145,9 +68,104 @@
                   </Label>
                </children>
             </AnchorPane>
+                <AnchorPane id="white" fx:id="pane1" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
+                    <children>
+                        <GridPane layoutY="68.0" prefHeight="164.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <AnchorPane prefHeight="130.0" prefWidth="300.0">
+                                    <children>
+                                        <ChoiceBox fx:id="cuisineChoiceBox" layoutX="38.0" layoutY="43.0" prefHeight="28.0" prefWidth="150.0" AnchorPane.leftAnchor="44.0" />
+                                        <Label id="label" layoutX="38.0" layoutY="19.0" stylesheets="@recipe_search.css" text="Cuisine" AnchorPane.topAnchor="14.0">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane GridPane.columnIndex="1">
+                                    <children>
+                                        <ChoiceBox fx:id="ingredientChoiceBox" layoutX="23.0" layoutY="43.0" prefWidth="150.0" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="43.0" />
+                                        <Label id="label" layoutX="38.0" layoutY="14.0" stylesheets="@recipe_search.css" text="Main Igredient" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="14.0">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane GridPane.rowIndex="1">
+                                    <children>
+                                        <RadioButton fx:id="ezRadio" layoutX="44.0" layoutY="44.0" mnemonicParsing="false" text="Ez" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="44.0">
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="difficulty" />
+                                            </toggleGroup></RadioButton>
+                                        <RadioButton fx:id="lessEzRadio" layoutX="116.0" layoutY="44.0" mnemonicParsing="false" text="Less Ez" toggleGroup="$difficulty" AnchorPane.topAnchor="44.0" />
+                                        <RadioButton fx:id="notEzRadio" layoutX="222.0" layoutY="44.0" mnemonicParsing="false" text="Not ez" toggleGroup="$difficulty" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="44.0" />
+                                        <Label id="label" layoutX="40.0" layoutY="14.0" prefHeight="24.0" prefWidth="150.0" stylesheets="@recipe_search.css" text="Difficulty" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="14.0">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                        <TextField fx:id="priceTextField" layoutX="25.0" layoutY="48.0" prefHeight="28.0" prefWidth="38.0" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="44.0" />
+                                        <Label id="label" layoutX="25.0" layoutY="22.0" stylesheets="@recipe_search.css" text="Max Price" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="14.0">
+                                            <font>
+                                                <Font name="System Bold" size="17.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </GridPane>
+                        <Label id="headlne" layoutX="42.0" layoutY="14.0" prefHeight="54.0" prefWidth="251.0" stylesheets="@recipe_search.css" text="Recipe book" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="14.0">
+                            <font>
+                                <Font size="40.0" />
+                            </font>
+                        </Label>
+                        <Button layoutX="86.0" layoutY="371.0" mnemonicParsing="false" onAction="#searchButtonActionPerformed" prefHeight="61.0" prefWidth="150.0" stylesheets="@recipe_search.css" text="Search" AnchorPane.rightAnchor="38.0" />
+                        <AnchorPane layoutX="36.0" layoutY="257.0" prefHeight="78.0" prefWidth="251.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                            <children>
+                                <Label id="label" layoutY="2.0" stylesheets="@recipe_search.css" text="Estimated time" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="14.0">
+                                    <font>
+                                        <Font name="System Bold" size="17.0" />
+                                    </font>
+                                </Label>
+                                <Slider fx:id="timeSlider" layoutY="29.0" majorTickUnit="20.0" max="150.0" min="10.0" minorTickCount="1" prefHeight="42.0" prefWidth="327.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="60.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="38.0" AnchorPane.topAnchor="44.0" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
             <AnchorPane id="white" fx:id="pane2" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
                <children>
-                  <ScrollPane layoutX="16.0" layoutY="42.0" prefHeight="314.0" prefWidth="569.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0" />
+                  <ScrollPane fx:id="recipeResultsScrollPane" layoutX="16.0" layoutY="42.0" prefHeight="314.0" prefWidth="569.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
+                     <content>
+                        <AnchorPane fx:id="SearchResultAnchorPane" prefHeight="206.0" prefWidth="342.0">
+                           <children>
+                              <GridPane fx:id="recipeGridResult" prefHeight="611.0" prefWidth="544.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </content></ScrollPane>
                   <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButton1ActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
                      <tooltip>
                         <Tooltip text="Back to the start" />

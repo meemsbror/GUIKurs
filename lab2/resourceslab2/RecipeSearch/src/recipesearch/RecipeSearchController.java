@@ -3,6 +3,8 @@ package recipesearch;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import com.sun.xml.internal.ws.api.FeatureConstructor;
 import javafx.event.*;
 import javafx.fxml.*;
 import javafx.scene.*;
@@ -42,6 +44,7 @@ public class RecipeSearchController implements Initializable {
     @FXML private Slider timeSlider;
     @FXML private Button searchButton;
     @FXML private ToggleGroup difficulty;
+    @FXML private GridPane recipeGridResult;
 
     RecipeDatabase db = RecipeDatabase.getSharedInstance();
     List <Recipe> recipes;
@@ -130,6 +133,8 @@ public class RecipeSearchController implements Initializable {
 
         recipes = db.search(new SearchFilter(diff,cookingTime,country,price,mainIngredient));
         setResults();
+
+
         pane2.toFront();
 
     }
@@ -137,14 +142,10 @@ public class RecipeSearchController implements Initializable {
     private void setResults(){
         int i = 0;
         for(Recipe r:recipes){
-            if(i<7) {
-                if (r != null) {
-                    //add recipe to box
-                    i++;
-                } else {
-                    hideRest(i);
-                    break;
-                }
+            if(r!=null) {
+                recipeGridResult.getChildren().add(new RecipeSearchResultPane(r));
+            }else{
+                break;
             }
         }
     }
@@ -192,8 +193,5 @@ public class RecipeSearchController implements Initializable {
     protected void recipeHoover(MouseEvent event){
         //TODO
     }
-    @FXML
-    protected void searchButtonActionPreformed(ActionEvent event){
-        pane2.toFront();
-    }
+
 }
