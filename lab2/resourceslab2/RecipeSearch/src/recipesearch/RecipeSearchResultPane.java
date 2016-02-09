@@ -1,8 +1,10 @@
 package recipesearch;
 
+import javafx.event.ActionEvent;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.lab2.Recipe;
 import javafx.beans.property.StringProperty;
@@ -11,13 +13,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.io.*;
 import java.util.ResourceBundle;
 import javafx.scene.image.ImageView;
 
-/**
- * Created by frej on 2/8/16.
- */
+
+
 public class RecipeSearchResultPane extends AnchorPane{
     Recipe recipe;
     Parent root;
@@ -25,6 +28,8 @@ public class RecipeSearchResultPane extends AnchorPane{
     @FXML private Label nameLabel;
     @FXML private Label infoLabel;
     @FXML private ImageView recipeImage;
+
+    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
 
 
 
@@ -49,10 +54,19 @@ public class RecipeSearchResultPane extends AnchorPane{
 
     }
 
+    public void addPropertyChangeListener(PropertyChangeListener p){
+        pcs.addPropertyChangeListener(p);
+    }
+
+    public void recipeClicked(MouseEvent event){
+        System.out.println("hej");
+        pcs.firePropertyChange("recipe selected",null,recipe);
+    }
+
+
+
     private void setRecipe(){
-            if(recipe==null) {
-                System.out.println("fuck allt");
-            }
+
             recipeImage.setImage(recipe.getFXImage());
             nameLabel.setText(recipe.getName());
             infoLabel.setText(recipe.getCuisine() + "/n" +

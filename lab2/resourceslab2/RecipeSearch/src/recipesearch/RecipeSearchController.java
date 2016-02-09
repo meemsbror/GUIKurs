@@ -1,5 +1,8 @@
 
 package recipesearch;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,7 +28,7 @@ import se.chalmers.ait.dat215.lab2.SearchFilter;
 
 
 
-public class RecipeSearchController implements Initializable {
+public class RecipeSearchController implements Initializable,PropertyChangeListener {
     
     @FXML private MenuBar menuBar;
 
@@ -44,7 +47,9 @@ public class RecipeSearchController implements Initializable {
     @FXML private Slider timeSlider;
     @FXML private Button searchButton;
     @FXML private ToggleGroup difficulty;
-    @FXML private GridPane recipeGridResult;
+    @FXML private VBox resultVBox;
+
+    private
 
     RecipeDatabase db = RecipeDatabase.getSharedInstance();
     List <Recipe> recipes;
@@ -55,11 +60,8 @@ public class RecipeSearchController implements Initializable {
     //Pane numero dres
     @FXML private Label nameText;
     @FXML private Label ingredientText;
-    @FXML private Label descriptionText;
+    @FXML private Label recipeText;
     @FXML private ImageView recipePic;
-
-
-
 
 
     @Override
@@ -143,7 +145,9 @@ public class RecipeSearchController implements Initializable {
         int i = 0;
         for(Recipe r:recipes){
             if(r!=null) {
-                recipeGridResult.getChildren().add(new RecipeSearchResultPane(r));
+                RecipeSearchResultPane temp = new RecipeSearchResultPane(r);
+                temp.addPropertyChangeListener(this);
+                resultVBox.getChildren().add(temp);
             }else{
                 break;
             }
@@ -185,13 +189,23 @@ public class RecipeSearchController implements Initializable {
         System.out.println(event.getSource().toString());
     }
     @FXML
-    protected void recipeChoosen(MouseEvent event){
-        nameText.setText("");
+    protected void recipeChoosen(Recipe r){
+        nameText.setText(r.getName());
+        ingredientText.setText(r.getIngredients().toString());
+        recipeText.setText(r.getInstruction());
+        recipePic.setImage(r.getFXImage());
         pane3.toFront();
     }
     @FXML
     protected void recipeHoover(MouseEvent event){
         //TODO
+    }
+
+    public void propertyChange(PropertyChangeEvent evt){
+
+        if(evt.getPropertyName().equals("recipe selected")){
+            recipeChoosen((Recipe)evt.getNewValue());
+        }
     }
 
 }
