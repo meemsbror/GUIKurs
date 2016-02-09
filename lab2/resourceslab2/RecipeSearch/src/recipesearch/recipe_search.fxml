@@ -55,7 +55,7 @@
             </AnchorPane>
             <AnchorPane id="white" fx:id="pane3" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
                <children>
-                  <Label fx:id="recipeText" alignment="TOP_LEFT" layoutX="36.0" layoutY="243.0" prefHeight="204.0" prefWidth="555.0" text="Description" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="243.0">
+                  <Label fx:id="recipeText" alignment="TOP_LEFT" layoutX="36.0" layoutY="243.0" prefHeight="204.0" prefWidth="555.0" text="instruktions" wrapText="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="243.0">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -75,7 +75,7 @@
                         <Font size="40.0" />
                      </font>
                   </Label>
-                  <Label fx:id="ingredientText" alignment="TOP_LEFT" layoutX="281.0" layoutY="119.0" prefHeight="129.0" prefWidth="294.0" text="Ingredience">
+                  <Label fx:id="ingredientText" alignment="TOP_LEFT" layoutX="281.0" layoutY="119.0" prefHeight="129.0" prefWidth="294.0" text="Ingredience" wrapText="true">
                      <font>
                         <Font size="14.0" />
                      </font>
