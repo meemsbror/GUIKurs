@@ -69,6 +69,19 @@
                   </Label>
                </children>
             </AnchorPane>
+            <AnchorPane id="white" fx:id="pane2" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
+               <children>
+                  <ScrollPane fx:id="recipeResultsScrollPane" layoutX="16.0" layoutY="42.0" prefHeight="314.0" prefWidth="569.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
+                     <content>
+                        <VBox fx:id="resultVBox" prefHeight="382.0" prefWidth="568.0" />
+                     </content></ScrollPane>
+                  <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButton1ActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
+                     <tooltip>
+                        <Tooltip text="Back to the start" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </AnchorPane>
                 <AnchorPane id="white" fx:id="pane1" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
                     <children>
                         <GridPane layoutY="68.0" prefHeight="164.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -118,7 +131,7 @@
                                 </AnchorPane>
                                 <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
                                     <children>
-                                        <TextField fx:id="priceTextField" layoutX="25.0" layoutY="48.0" prefHeight="28.0" prefWidth="38.0" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="44.0" />
+                                        <TextField fx:id="priceTextField" layoutX="25.0" layoutY="48.0" prefHeight="28.0" prefWidth="59.0" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="44.0" />
                                         <Label id="label" layoutX="25.0" layoutY="22.0" stylesheets="@recipe_search.css" text="Max Price" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="14.0">
                                             <font>
                                                 <Font name="System Bold" size="17.0" />
@@ -146,19 +159,6 @@
                         </AnchorPane>
                     </children>
                 </AnchorPane>
-            <AnchorPane id="white" fx:id="pane2" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
-               <children>
-                  <ScrollPane fx:id="recipeResultsScrollPane" layoutX="16.0" layoutY="42.0" prefHeight="314.0" prefWidth="569.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
-                     <content>
-                        <VBox fx:id="resultVBox" prefHeight="382.0" prefWidth="568.0" />
-                     </content></ScrollPane>
-                  <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButton1ActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
-                     <tooltip>
-                        <Tooltip text="Back to the start" />
-                     </tooltip>
-                  </Button>
-               </children>
-            </AnchorPane>
             </children>
         </StackPane>
     </children>
