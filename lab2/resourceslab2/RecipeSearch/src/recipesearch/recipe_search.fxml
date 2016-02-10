@@ -40,19 +40,6 @@
         </MenuBar>
         <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
             <children>
-            <AnchorPane id="white" fx:id="pane2" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
-               <children>
-                  <ScrollPane fx:id="recipeResultsScrollPane" layoutX="16.0" layoutY="42.0" prefHeight="314.0" prefWidth="569.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
-                     <content>
-                        <VBox fx:id="resultVBox" prefHeight="382.0" prefWidth="568.0" />
-                     </content></ScrollPane>
-                  <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButton1ActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
-                     <tooltip>
-                        <Tooltip text="Back to the start" />
-                     </tooltip>
-                  </Button>
-               </children>
-            </AnchorPane>
             <AnchorPane id="white" fx:id="pane3" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
                <children>
                   <Label fx:id="recipeText" alignment="TOP_LEFT" layoutX="36.0" layoutY="243.0" prefHeight="204.0" prefWidth="555.0" text="instruktions" wrapText="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="243.0">
@@ -121,7 +108,7 @@
                                                 <ToggleGroup fx:id="difficulty" />
                                             </toggleGroup></RadioButton>
                                         <RadioButton fx:id="lessEzRadio" layoutX="116.0" layoutY="44.0" mnemonicParsing="false" text="Less Ez" toggleGroup="$difficulty" AnchorPane.topAnchor="44.0" />
-                                        <RadioButton fx:id="notEzRadio" layoutX="222.0" layoutY="44.0" mnemonicParsing="false" text="Not ez" toggleGroup="$difficulty" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="44.0" />
+                                        <RadioButton fx:id="notEzRadio" layoutX="222.0" layoutY="44.0" mnemonicParsing="false" text="Not ez" toggleGroup="$difficulty" />
                                         <Label id="label" layoutX="40.0" layoutY="14.0" prefHeight="24.0" prefWidth="150.0" stylesheets="@recipe_search.css" text="Difficulty" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="14.0">
                                             <font>
                                                 <Font name="System Bold" size="17.0" />
@@ -159,6 +146,19 @@
                         </AnchorPane>
                     </children>
                 </AnchorPane>
+            <AnchorPane id="white" fx:id="pane2" prefHeight="200.0" prefWidth="200.0" stylesheets="@recipe_search.css">
+               <children>
+                  <ScrollPane fx:id="recipeResultsScrollPane" layoutX="16.0" layoutY="42.0" prefHeight="314.0" prefWidth="569.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
+                     <content>
+                        <VBox fx:id="resultVBox" prefHeight="382.0" prefWidth="568.0" />
+                     </content></ScrollPane>
+                  <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButton1ActionPreformed" prefHeight="40.0" prefWidth="109.0" text="Back" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="8.0">
+                     <tooltip>
+                        <Tooltip text="Back to the start" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </AnchorPane>
             </children>
         </StackPane>
     </children>

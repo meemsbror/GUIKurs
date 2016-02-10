@@ -143,6 +143,8 @@ public class RecipeSearchController implements Initializable,PropertyChangeListe
 
     private void setResults(){
         int i = 0;
+
+        resultVBox.getChildren().removeAll(resultVBox.getChildren());
         for(Recipe r:recipes){
             if(r!=null) {
                 RecipeSearchResultPane temp = new RecipeSearchResultPane(r);

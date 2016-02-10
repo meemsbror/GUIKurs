@@ -12,7 +12,7 @@
             <Image url="@../../../recipes/coq-au-vin-2.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="nameLabel" layoutX="149.0" prefHeight="56.0" prefWidth="97.0" text="Recept namn" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" />
-      <Label fx:id="infoLabel" layoutX="149.0" layoutY="56.0" prefHeight="56.0" prefWidth="403.0" text="Recept info" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" />
+      <Label fx:id="nameLabel" layoutX="149.0" prefHeight="56.0" prefWidth="97.0" text="Recept namn" wrapText="true" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" />
+      <Label fx:id="infoLabel" layoutX="149.0" layoutY="56.0" prefHeight="56.0" prefWidth="403.0" text="Recept info" wrapText="true" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" />
    </children>
 </fx:root>

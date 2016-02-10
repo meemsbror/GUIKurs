@@ -69,10 +69,10 @@ public class RecipeSearchResultPane extends AnchorPane{
 
             recipeImage.setImage(recipe.getFXImage());
             nameLabel.setText(recipe.getName());
-            infoLabel.setText(recipe.getCuisine() + "/n" +
-                    recipe.getDifficulty() + "/n" +
-                    recipe.getMainIngredient() + "/n" +
-                    recipe.getServings() + "/n" +
+            infoLabel.setText(recipe.getCuisine() + ", Difficulty: " +
+                    recipe.getDifficulty() + ", Main ingredient: " +
+                    recipe.getMainIngredient() + ", Number of servings: " +
+                    recipe.getServings() + ", Time:" +
                     recipe.getTime());
 
     }
