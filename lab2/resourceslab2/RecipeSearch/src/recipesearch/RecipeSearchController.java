@@ -125,7 +125,7 @@ public class RecipeSearchController implements Initializable,PropertyChangeListe
     }
 
     @FXML
-    protected void searchButtonActionPerformed(ActionEvent event){
+    protected void searchButtonActionPerformed(ActionEvent event){ 3
 
         String country = (String) cuisineChoiceBox.getValue();
         String mainIngredient = (String) ingredientChoiceBox.getValue();
